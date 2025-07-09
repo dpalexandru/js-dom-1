@@ -2,14 +2,17 @@
 const foto = document.getElementById('lampadina');
 const button = document.getElementById('accendiSpegni');
 
-
-console.log(foto.src);
-console.log(button);
-
 // aggiungo funzione a EvenListner
 button.addEventListener('click', () => {
-  foto.src = '/assets/img/yellow_lamp.png';
-  button.textContent = 'Spegni';
+  // aggiungo if per gestire accendi/spegni
+
+  if (foto.src.includes("/assets/img/white_lamp.png")){
+    foto.src = '/assets/img/yellow_lamp.png';
+    button.textContent = 'Spegni';
+  } else {
+    foto.src = '/assets/img/white_lamp.png';
+    button.textContent = 'Accendi';
+  }
 });
 
 
